@@ -3,12 +3,14 @@ import Button from '@mui/material/Button';
 import { FormControl, FormLabel } from '@mui/material';
 import Box from '@mui/material/Box';
 import React from 'react'
+import cryptoRandomString from 'crypto-random-string';
 
 export default function FormComp() {
   return (
     <>
     <h1>Book Ticket</h1>
     <form action="/bookTicket" method='Post'>
+      <input type="text" name='uid' value={cryptoRandomString({length:10})} hidden/>
       <input name='tNo' type="text" placeholder='train No.'/>
       <input name='bookDt' type='date' placeholder='bookDate'/>
       <select name="route" id="rt">

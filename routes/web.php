@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CancelTicket;
 use App\Http\Controllers\BookingController;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::post('/bookTicket', [BookingController::class, 'bookTicket']);
+
+Route::post('/cancelTicket', [CancelTicket::class, 'cancelTicket']);

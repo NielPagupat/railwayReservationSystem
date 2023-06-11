@@ -9,6 +9,7 @@ class BookingController extends Controller
 {
     public function bookTicket(Request $request){
         $incomingFields = $request -> validate([
+            'uid' => 'required',
             'tNo' => 'required',
             'bookDt' => 'required',
             'route' => 'required',
@@ -23,8 +24,9 @@ class BookingController extends Controller
             'address' => 'required'
         ]);
 
-        $bookTicket = DB::select('call bookTicket(?,?,?,?,?,?,?,?,?,?,?,?)', 
-                                    array($incomingFields['tNo'],
+        $bookTicket = DB::select('call bookTicket(?,?,?,?,?,?,?,?,?,?,?,?,?)', 
+                                    array($incomingFields['uid'],
+                                          $incomingFields['tNo'],
                                           $incomingFields['bookDt'],
                                           $incomingFields['route'],
                                           $incomingFields['source'],

@@ -13,6 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import FormComp from '../components/FormComp';
+import CancelTicket from '../components/CancelTicket';
 
 function Copyright(props) {
   return (
@@ -60,7 +61,9 @@ export default function SignInSide() {
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <FormComp />
+          <FormComp />,
+          <CancelTicket />
+
         </Grid>
       </Grid>
     </ThemeProvider>
